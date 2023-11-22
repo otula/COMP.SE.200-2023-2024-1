@@ -4,6 +4,9 @@ describe('capitalize', function(){
     it('should turn the first letter of a lowercase string to uppercase', function() {
 	expect(capitalize("example")).toBe("Example");
     });
+    it('should turn all uppercase letters to lowercase except the first one', function() {
+	expect(capitalize("FRED")).toBe("Fred");
+    });
     it('should capitalize lowercase strings despite them containing a special mark', function() {
 	expect(capitalize("exam©le")).toBe("Exam©le");
     });
