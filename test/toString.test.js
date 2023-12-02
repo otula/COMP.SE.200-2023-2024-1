@@ -25,6 +25,10 @@ describe('toString', function(){
   it('string returns itself', function(){
     expect(toString("abc")).toEqual('abc')
   });
+
+  it('empty string returns itself', function(){
+    expect(toString("")).toEqual('')
+  });
   
   it('object returns object object', function(){
     expect(toString(new Object())).toEqual('[object Object]')
