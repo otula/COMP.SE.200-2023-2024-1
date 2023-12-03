@@ -26,6 +26,10 @@ describe('toString', function(){
     expect(toString("abc")).toEqual('abc')
   });
 
+  it('char returns itself', function(){
+    expect(toString('a')).toEqual('a')
+  });
+
   it('empty string returns itself', function(){
     expect(toString("")).toEqual('')
   });
