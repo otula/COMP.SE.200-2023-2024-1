@@ -1,7 +1,7 @@
 import toString from '../src/toString.js';
 
 describe('toString', function(){
-  it('positive integer and float returns empty string', function(){
+  it('positive integer and float returns corresponding string', function(){
     expect(toString(1)).toEqual('1')
     expect(toString(1.001)).toEqual('1.001')
   });
