@@ -1,0 +1,52 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+    branches:
+      - main  # Change this to your main branch name if it's different
+
+env:
+  CI: true
+
+jobs:
+  test:
+    name: Node ${{ matrix.node }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [14, 16, 18, 19]
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install npm dependencies
+        run: npm install # switch to `npm ci` when Node.js 6 support is dropped
+
+      - name: Run lint
+        run: npm run lint
+
+      - name: Run tests
+        run: npm run test-cov
+
+      - name: Coveralls GitHub Action
+        uses: coverallsapp/github-action@v2.2.3
+
+      - name: Coveralls
+        run: cat ./coverage/lcov.info | node ./bin/coveralls.js
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+          COVERALLS_SERVICE_NAME: CI-pipeline
+          COVERALLS_SERVICE_JOB_ID: ${{ github.run_id }}
+          COVERALLS_SERVICE_JOB_NUMBER: ${{ github.run_number }}
+          COVERALLS_FLAG_NAME: ${{ matrix.os }}-node-${{ matrix.node }}
+          COVERALLS_PARALLEL
