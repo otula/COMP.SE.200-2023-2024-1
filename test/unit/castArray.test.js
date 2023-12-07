@@ -15,6 +15,7 @@ describe('castArray', () => {
         expect(castArray(array)).toBe(array);
     });
 
+    // Note: This behaviour can be subject to change in the future.
     it('should cast only first given argument to array', () => {
         expect(castArray(1, {'a': 1}, 'abc', null, undefined)).toEqual([1]);
     });

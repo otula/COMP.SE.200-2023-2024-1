@@ -2,8 +2,7 @@ import compact from '../../src/compact.js';
 
 describe('compact', () => {
     it('should remove all falsey values from the array', () => {
-        //const array = [0, 1, false, NaN, undefined, null, 2, '', 3];
-        const array = [0, 1, false, 2, '', 3];
+        const array = [0, 1, false, NaN, undefined, null, 2, '', 3];
         const result = compact(array);
         expect(result).toEqual([1, 2, 3]);
     });

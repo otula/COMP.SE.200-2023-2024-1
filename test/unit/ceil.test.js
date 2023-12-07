@@ -13,6 +13,7 @@ describe('ceil', () => {
         expect(ceil(-4.006)).toBe(-4);
         expect(ceil(-6.004)).toBe(-6);
         expect(ceil(-6040)).toBe(-6040);
+        expect(ceil(-0.01)).toBe(-0);
     });
 
     it('should round up a number to the specified precision', () => {
@@ -27,6 +28,7 @@ describe('ceil', () => {
         expect(ceil(6040, -5)).toBe(100000);
     });
 
+    // Note: This behaviour can be subject to change in the future.
     it('should return NaN or 0 for non-numeric values', () => {
         expect(ceil('abc')).toBeOneOf([NaN, 0]);
         expect(ceil(null)).toBeOneOf([NaN, 0]);
