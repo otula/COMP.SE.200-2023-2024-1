@@ -22,6 +22,10 @@ describe('toString', function(){
     expect(toString([])).toEqual('')
   });
   
+  it('array with null returns null', function(){
+    expect(toString([null])).toEqual(null)
+  });
+  
   it('string returns itself', function(){
     expect(toString("abc")).toEqual('abc')
   });
