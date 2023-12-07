@@ -5,7 +5,6 @@ describe('compact', () => {
         //const array = [0, 1, false, NaN, undefined, null, 2, '', 3];
         const array = [0, 1, false, 2, '', 3];
         const result = compact(array);
-        console.log(result);
         expect(result).toEqual([1, 2, 3]);
     });
 
@@ -18,7 +17,6 @@ describe('compact', () => {
     it('should return the same array if it contains no falsey values', () => {
         const array = [1, 'hello', true, [1, 2, 3], function() {}, new RegExp()];
         const result = compact(array);
-        console.log(result);
         expect(result).toEqual(array);
     });
 });
