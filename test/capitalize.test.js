@@ -16,17 +16,25 @@ describe('capitalize', function() {
     it('should capitalize lowercase strings despite them containing a special mark', function() {
         expect(capitalize("exam©le")).toBe("Exam©le");
     });
+
+    it('should return symbol as string', function() {
+	expect(capitalize(Symbol('a'))).toBe('Symbol(a)');
+    });
     
     it('should turn numbers into a string', function() {
         expect(capitalize(34)).toBe("34");
     });
-    
+
     it('should leave it as it is when given an empty string', function() {
         expect(capitalize("")).toBe("");
     });
     
     it('should capitalize the first element of an array and use , as a separator', function() {
         expect(capitalize(["fiRST", "SECOND", "ThirD"])).toBe("First,second,third");
+    });
+
+    it('should return empty string when given array containing null value', function() {
+	expect(capitalize([null])).toBe("");
     });
 
     it('should use the usual notation for objects', function() {
