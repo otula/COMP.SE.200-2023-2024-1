@@ -1,5 +1,3 @@
-// FILEPATH: /G:/repositories/COMP.SE.200-assignment/test/unit/toNumber.test.js
-
 import toNumber from '../../src/toNumber.js';
 
 describe('toNumber', () => {

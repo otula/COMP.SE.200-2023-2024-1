@@ -1,5 +1,3 @@
-// FILEPATH: /G:/repositories/COMP.SE.200-assignment/test/unit/toString.test.js
-
 import toString from '../../src/toString.js';
 
 describe('toString', () => {

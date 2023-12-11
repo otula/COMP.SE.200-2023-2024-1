@@ -1,5 +1,3 @@
-// FILEPATH: /G:/repositories/COMP.SE.200-assignment/test/unit/get.test.js
-
 import get from '../../src/get.js';
 
 describe('get', () => {

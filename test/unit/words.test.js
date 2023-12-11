@@ -1,5 +1,3 @@
-// FILEPATH: /G:/repositories/COMP.SE.200-assignment/test/unit/words.test.js
-
 import words from '../../src/words.js';
 
 describe('words', () => {

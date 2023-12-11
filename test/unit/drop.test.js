@@ -1,5 +1,3 @@
-// FILEPATH: /G:/repositories/COMP.SE.200-assignment/test/unit/drop.test.js
-
 import drop from '../../src/drop.js';
 
 describe('drop', () => {
