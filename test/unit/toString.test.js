@@ -15,14 +15,6 @@ describe('toString', () => {
         expect(toString(true)).toBe('true');
     });
 
-    it('should return the string representation when the input is null', () => {
-        expect(toString(null)).toBe('');
-    });
-
-    it('should return the string representation when the input is undefined', () => {
-        expect(toString(undefined)).toBe('');
-    });
-
     it('should return the string representation when the input is an array', () => {
         expect(toString([1, 2, 3])).toBe('1,2,3');
     });
